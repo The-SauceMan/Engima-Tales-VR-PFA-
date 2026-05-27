@@ -48,7 +48,7 @@ The application is built around a **branching, interactive narrative** where the
 <p align="center">
   <img width="1872" height="914" alt="image" src="https://github.com/user-attachments/assets/b0d763d7-f39b-4e28-b91c-68cc2c401a25" />
 <img width="1874" height="912" alt="Screenshot 2026-05-27 172842" src="https://github.com/user-attachments/assets/7e7dbca7-036e-47e3-b11f-71d7e43362aa" />  <br>
-  <em>Left: The bedroom lobby with interactive books. Right: The floating main menu panel.</em>
+  <em>Top: The bedroom lobby with interactive books. Bottom: The floating main menu panel.</em>
 </p>
 
 ---
