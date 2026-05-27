@@ -72,9 +72,8 @@ The application is built around a **branching, interactive narrative** where the
 | **Blender** | 3D character modeling (Tortoise & Hare), UV mapping, optimization |
 | **Mixamo** | Automated character rigging and animations |
 | **Sketchfab** | Source for some low-poly environmental assets |
-| **Draw.io** | UML diagrams, use cases, flowcharts |
 | **GitHub** | Version control, source code management |
-| **Meta Quest 3** | Primary standalone VR headset for testing and deployment |
+| **Meta Quest 3s** | Primary standalone VR headset for testing and deployment |
 
 ### Performance Optimization (for Standalone VR)
 - **Target Frame Rate:** Stable 90 FPS to prevent motion sickness.
