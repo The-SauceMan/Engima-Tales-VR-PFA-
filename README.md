@@ -1,4 +1,4 @@
-# 🐢🐇 Enigma Tales VR: The Tortoise and the Hare
+# 🐢🐇 Enigma Tales VR: The Tortoise and the Hare (Work In Progress...)
 
 **Final Year Project (PFA) – Class of 2026** <br>
 **Authors:** Ouni Ala Eddine & Sidhom Khalil <br>
