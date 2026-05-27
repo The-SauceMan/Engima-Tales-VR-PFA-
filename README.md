@@ -1,12 +1,7 @@
 # 🐢🐇 Enigma Tales VR: The Tortoise and the Hare
 
-┌─────────────────────────────────────────────────────────┐
-│  FINAL YEAR PROJECT (PFA)                               │
-│                                                         │
-│  Ouni Ala Eddine  |  Sidhom Khalil                      │
-│  4th Year Senior Students, VR & Game Engineering        │
-│  EPI Sousse                                             │
-└─────────────────────────────────────────────────────────┘
+**Final Year Project (PFA)** — *Ouni Ala Eddine & Sidhom Khalil*  
+*4th Year Senior Students, VR & Game Engineering | EPI Sousse*
 
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
