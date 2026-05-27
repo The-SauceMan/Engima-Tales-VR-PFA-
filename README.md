@@ -1,4 +1,4 @@
-# 🐢🐇 VR Storytelling: The Tortoise and the Hare
+# 🐢🐇 Enigma Tales VR: The Tortoise and the Hare
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Unity Version](https://img.shields.io/badge/Unity-2022.3+-black.svg)](https://unity.com/)
@@ -9,7 +9,7 @@
 Instead of passively reading words on a page, children step *inside* the story world. They explore environments, interact with characters, and live the narrative from within. This project was developed as an End of Year Project at EPI Digital School (VR & Game Engineering program) to combat declining reading habits by making storytelling exciting, interactive, and memorable.
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x400?text=VR+Story+Screenshot+-+The+Race+Scene" alt="VR Story Scene Screenshot" width="800">
+  <img width="1990" height="1162" alt="Screenshot 2026-05-27 172410" src="https://github.com/user-attachments/assets/579f3a7e-49c9-4ad1-a8b5-5001aeba6224" />
   <br>
   <em>The child experiences the race from a first-person perspective on the track.</em>
 </p>
@@ -46,9 +46,8 @@ The application is built around a **branching, interactive narrative** where the
 5.  **Ending & Progress:** The story concludes based on choices. Progress is saved, and achievements are tracked.
 
 <p align="center">
-  <img src="https://via.placeholder.com/400x300?text=Lobby+Sketch" alt="Lobby Area Sketch" width="400">
-  <img src="https://via.placeholder.com/400x300?text=Main+Menu+UI" alt="Main Menu UI" width="400">
-  <br>
+  <img width="1872" height="914" alt="image" src="https://github.com/user-attachments/assets/b0d763d7-f39b-4e28-b91c-68cc2c401a25" />
+<img width="1874" height="912" alt="Screenshot 2026-05-27 172842" src="https://github.com/user-attachments/assets/7e7dbca7-036e-47e3-b11f-71d7e43362aa" />  <br>
   <em>Left: The bedroom lobby with interactive books. Right: The floating main menu panel.</em>
 </p>
 
