@@ -94,9 +94,9 @@ The application is built around a **branching, interactive narrative** where the
 3.  **Race Scene:** A dedicated track where both characters run past the child's first-person viewpoint.
 
 <p align="center">
-  <img src="https://via.placeholder.com/300x300?text=Rabbit+Render" alt="Rabbit Character" width="300">
-  <img src="https://via.placeholder.com/300x300?text=Turtle+Render" alt="Turtle Character" width="300">
-  <br>
+  
+  <img width="1025" height="555" alt="Screenshot 2026-05-27 174203" src="https://github.com/user-attachments/assets/34c9904a-3243-42b1-8319-5aa470c96e6b" />
+  <img width="1023" height="558" alt="Screenshot 2026-05-27 174223" src="https://github.com/user-attachments/assets/33493ebb-7ac2-432a-ab71-5e38ed9d6938" />  <br>
   <em>Final low-poly character renders: The Hare and The Tortoise.</em>
 </p>
 
