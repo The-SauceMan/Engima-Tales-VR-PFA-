@@ -30,7 +30,6 @@ The application is built around a **branching, interactive narrative** where the
 
 ### Core Mechanics
 
-- **Immersive Reading:** Each "page" of the story becomes a fully realized 3D scene the child can explore.
 - **Environmental Interaction:** Children can interact with objects, characters, and elements in the world (e.g., touching trees, looking at characters up close).
 - **Narrative Choices:** At key moments, the child makes decisions that influence the story's progression.
 - **Multiple Endings:** Based on the choices made, the story can reach different conclusions, encouraging replayability.
@@ -43,7 +42,6 @@ The application is built around a **branching, interactive narrative** where the
 2.  **Story Selection:** Selecting *The Tortoise and the Hare* book transports the player to the outdoor story environment.
 3.  **Narrative Exploration:** The player follows the story, interacts with elements, and faces decision points.
 4.  **The Race Scene:** The climax places the child *on the race track*, watching the Tortoise and Hare run past them—a moment of high immersion.
-5.  **Ending & Progress:** The story concludes based on choices. Progress is saved, and achievements are tracked.
 
 <p align="center">
   <img width="1872" height="914" alt="image" src="https://github.com/user-attachments/assets/b0d763d7-f39b-4e28-b91c-68cc2c401a25" />
@@ -110,8 +108,3 @@ The application is built around a **branching, interactive narrative** where the
 - **Hardware:** Meta Quest 3, Pico 4 Ultra, or any OpenXR-compatible headset.
 - **PC (for development):** Windows 10/11, NVIDIA GTX 1060 (or equivalent) minimum, 16+ GB RAM.
 - **Software:** Unity 2022.3+, Visual Studio 2022+, Git.
-
-### Build & Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/vr-tortoise-hare.git
