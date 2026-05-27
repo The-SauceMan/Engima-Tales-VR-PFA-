@@ -1,5 +1,11 @@
 # 🐢🐇 Enigma Tales VR: The Tortoise and the Hare
 
+Final Year Project (PFA) – Class of 2026
+Authors: Ouni Ala Eddine & Sidhom Khalil
+Status: 4th Year Senior Students, VR & Game Engineering
+Institution: EPI Sousse
+
+
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Unity Version](https://img.shields.io/badge/Unity-2022.3+-black.svg)](https://unity.com/)
 [![Platform](https://img.shields.io/badge/Platform-Meta%20Quest%203%20%7C%20Pico%204-blue.svg)](https://www.meta.com/quest/)
