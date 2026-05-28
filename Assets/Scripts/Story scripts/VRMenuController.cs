@@ -11,17 +11,22 @@ public class VRMenuController : MonoBehaviour
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject optionsPanel;
     [SerializeField] private GameObject quitConfirmPanel;
+    [SerializeField] private GameObject debugPanel;
     
     [Header("Buttons - Main Menu")]
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button optionsButton;
     [SerializeField] private Button quitButton;
+    [SerializeField] private Button debugButton;
     
     [Header("Buttons - Options Menu")]
     [SerializeField] private Button backButton;
     
     [Header("Buttons - Quit Confirm Panel")]
     [SerializeField] private Button cancelButton;
+    
+    [Header("Buttons - Debug Panel")]
+    [SerializeField] private Button debugBackButton;
     
     [Header("Turn Settings")]
     [SerializeField] private TMP_Dropdown turnDropdown;
@@ -53,6 +58,8 @@ public class VRMenuController : MonoBehaviour
             optionsPanel.SetActive(false);
         if (quitConfirmPanel != null)
             quitConfirmPanel.SetActive(false);
+        if (debugPanel != null)
+            debugPanel.SetActive(false);
         
         // Setup button listeners
         if (resumeButton != null)
@@ -64,11 +71,17 @@ public class VRMenuController : MonoBehaviour
         if (quitButton != null)
             quitButton.onClick.AddListener(OpenQuitConfirm);
         
+        if (debugButton != null)
+            debugButton.onClick.AddListener(OpenDebug);
+        
         if (backButton != null)
             backButton.onClick.AddListener(CloseOptions);
         
         if (cancelButton != null)
             cancelButton.onClick.AddListener(CloseQuitConfirm);
+        
+        if (debugBackButton != null)
+            debugBackButton.onClick.AddListener(CloseDebug);
         
         // Setup turn dropdown
         if (turnDropdown != null)
@@ -155,6 +168,16 @@ public class VRMenuController : MonoBehaviour
             quitConfirmPanel.transform.rotation = Quaternion.Slerp(quitConfirmPanel.transform.rotation, targetRotation, followSpeed * Time.deltaTime);
         }
         
+        // Make debug panel follow camera when open
+        if (isMenuOpen && debugPanel != null && debugPanel.activeSelf && playerCamera != null)
+        {
+            targetPosition = playerCamera.position + (playerCamera.forward * distanceFromHead) + positionOffset;
+            debugPanel.transform.position = Vector3.Lerp(debugPanel.transform.position, targetPosition, followSpeed * Time.deltaTime);
+            
+            Quaternion targetRotation = Quaternion.LookRotation(debugPanel.transform.position - playerCamera.position);
+            debugPanel.transform.rotation = Quaternion.Slerp(debugPanel.transform.rotation, targetRotation, followSpeed * Time.deltaTime);
+        }
+        
         // DEBUG: Press Space to force menu open/close (for testing)
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -171,6 +194,7 @@ public class VRMenuController : MonoBehaviour
         mainMenuPanel.SetActive(true);
         optionsPanel.SetActive(false);
         quitConfirmPanel.SetActive(false);
+        debugPanel.SetActive(false);
         
         // Position menu in front of camera
         if (playerCamera != null)
@@ -189,6 +213,7 @@ public class VRMenuController : MonoBehaviour
         mainMenuPanel.SetActive(false);
         optionsPanel.SetActive(false);
         quitConfirmPanel.SetActive(false);
+        debugPanel.SetActive(false);
         Debug.Log("Menu closed");
     }
     
@@ -197,6 +222,7 @@ public class VRMenuController : MonoBehaviour
         mainMenuPanel.SetActive(false);
         optionsPanel.SetActive(true);
         quitConfirmPanel.SetActive(false);
+        debugPanel.SetActive(false);
         Debug.Log("Options opened");
     }
     
@@ -212,6 +238,7 @@ public class VRMenuController : MonoBehaviour
         mainMenuPanel.SetActive(false);
         optionsPanel.SetActive(false);
         quitConfirmPanel.SetActive(true);
+        debugPanel.SetActive(false);
         Debug.Log("Quit confirm panel opened");
     }
     
@@ -220,6 +247,22 @@ public class VRMenuController : MonoBehaviour
         quitConfirmPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
         Debug.Log("Quit confirm panel closed - returned to main menu");
+    }
+    
+    void OpenDebug()
+    {
+        mainMenuPanel.SetActive(false);
+        optionsPanel.SetActive(false);
+        quitConfirmPanel.SetActive(false);
+        debugPanel.SetActive(true);
+        Debug.Log("Debug panel opened");
+    }
+    
+    void CloseDebug()
+    {
+        debugPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
+        Debug.Log("Debug panel closed - returned to main menu");
     }
     
     void OnTurnTypeChanged(int value)
@@ -277,11 +320,17 @@ public class VRMenuController : MonoBehaviour
         if (quitButton != null)
             quitButton.onClick.RemoveListener(OpenQuitConfirm);
         
+        if (debugButton != null)
+            debugButton.onClick.RemoveListener(OpenDebug);
+        
         if (backButton != null)
             backButton.onClick.RemoveListener(CloseOptions);
         
         if (cancelButton != null)
             cancelButton.onClick.RemoveListener(CloseQuitConfirm);
+        
+        if (debugBackButton != null)
+            debugBackButton.onClick.RemoveListener(CloseDebug);
         
         if (turnDropdown != null)
             turnDropdown.onValueChanged.RemoveListener(OnTurnTypeChanged);
