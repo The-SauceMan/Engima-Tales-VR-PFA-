@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Turtle
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - enemy
   - Ground
   - Post Processing
-  - 
-  - 
+  - Turtle
+  - Obstacle
   - 
   - 
   - 
