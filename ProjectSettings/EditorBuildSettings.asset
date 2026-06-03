@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story1-2.unity
     guid: e402097697c6c014a9d483b215c7198e
+  - enabled: 1
+    path: Assets/Scenes/Good Ending.unity
+    guid: d9812ff991e307d42a92ba7f349bd930
+  - enabled: 1
+    path: Assets/Scenes/Bad Ending.unity
+    guid: df72e4f99fbd4784eaaf2f4afe1766ca
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ad39dcf35c57c0a41bfa418f7fb718a3,
       type: 2}
