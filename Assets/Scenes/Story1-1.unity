@@ -9695,6 +9695,9 @@ MonoBehaviour:
     duration: 5
   startDelay: 0
   speakerOffset: {x: 0, y: 1.5, z: 0}
+  timeline: {fileID: 215277115}
+  hideDialogueAtTime: 100
+  stopDialogueWhenHidden: 1
 --- !u!4 &129407037
 Transform:
   m_ObjectHideFlags: 0

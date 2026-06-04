@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Playables;
 
 [System.Serializable]
 public class DialogueLine
@@ -27,14 +28,24 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private float startDelay = 0f;
     [SerializeField] private Vector3 speakerOffset = new Vector3(0, 1.5f, 0);
     
+    [Header("Timeline Hiding")]
+    [SerializeField] private PlayableDirector timeline; // Timeline reference
+    [SerializeField] private float hideDialogueAtTime = 10f; // Time when dialogue UI should disappear
+    [SerializeField] private bool stopDialogueWhenHidden = true; // Stop processing dialogue when hidden
+    
     private bool isDialoguePlaying = false;
     private float dialogueStartTime;
     private GameObject currentSpeaker;
+    private bool hasBeenHidden = false;
+    private Coroutine dialogueCoroutine;
     
     void Start()
     {
         if (dialogueUI != null)
             dialogueUI.SetActive(false);
+        
+        if (timeline == null)
+            timeline = FindObjectOfType<PlayableDirector>();
         
         StartCoroutine(StartDialogueAfterDelay());
     }
@@ -42,6 +53,13 @@ public class DialogueController : MonoBehaviour
     void Update()
     {
         if (!isDialoguePlaying) return;
+        
+        // Check if timeline has reached hide time
+        if (!hasBeenHidden && timeline != null && timeline.time >= hideDialogueAtTime)
+        {
+            HideDialoguePermanently();
+            return;
+        }
         
         if (dialogueUI != null && dialogueUI.activeSelf && currentSpeaker != null)
         {
@@ -56,30 +74,49 @@ public class DialogueController : MonoBehaviour
     IEnumerator StartDialogueAfterDelay()
     {
         yield return new WaitForSeconds(startDelay);
-        StartDialogue();
+        
+        // Don't start dialogue if already hidden by timeline
+        if (!hasBeenHidden)
+            StartDialogue();
     }
     
     void StartDialogue()
     {
+        if (hasBeenHidden) return;
+        
         isDialoguePlaying = true;
         dialogueStartTime = Time.time;
-        StartCoroutine(ProcessDialogueLines());
+        
+        if (dialogueCoroutine != null)
+            StopCoroutine(dialogueCoroutine);
+        
+        dialogueCoroutine = StartCoroutine(ProcessDialogueLines());
     }
     
     IEnumerator ProcessDialogueLines()
     {
         foreach (DialogueLine line in dialogueLines)
         {
+            // Stop processing if hidden
+            if (hasBeenHidden) yield break;
+            
             float waitTime = line.displayTime - (Time.time - dialogueStartTime);
             if (waitTime > 0)
             {
                 yield return new WaitForSeconds(waitTime);
             }
             
+            // Check again after waiting
+            if (hasBeenHidden) yield break;
+            
             currentSpeaker = line.speaker;
             ShowDialogue(line);
+            
             yield return new WaitForSeconds(line.duration);
-            HideDialogue();
+            
+            // Check again before hiding
+            if (!hasBeenHidden)
+                HideDialogue();
         }
         
         isDialoguePlaying = false;
@@ -87,7 +124,7 @@ public class DialogueController : MonoBehaviour
     
     void ShowDialogue(DialogueLine line)
     {
-        if (dialogueUI != null)
+        if (dialogueUI != null && !hasBeenHidden)
         {
             // Set speaker name text
             if (speakerNameText != null)
@@ -110,8 +147,22 @@ public class DialogueController : MonoBehaviour
     
     void HideDialogue()
     {
+        if (dialogueUI != null && !hasBeenHidden)
+            dialogueUI.SetActive(false);
+    }
+    
+    void HideDialoguePermanently()
+    {
+        hasBeenHidden = true;
+        isDialoguePlaying = false;
+        
         if (dialogueUI != null)
             dialogueUI.SetActive(false);
+        
+        if (stopDialogueWhenHidden && dialogueCoroutine != null)
+            StopCoroutine(dialogueCoroutine);
+        
+        Debug.Log($"Dialogue UI hidden permanently at timeline time: {timeline?.time:F2}s / {hideDialogueAtTime}s");
     }
     
     void FaceCamera(GameObject ui)
@@ -126,13 +177,38 @@ public class DialogueController : MonoBehaviour
     // Public methods to control from other scripts
     public void StartDialogueFromScript()
     {
-        StartDialogue();
+        if (!hasBeenHidden)
+            StartDialogue();
     }
     
     public void SkipDialogue()
     {
-        StopAllCoroutines();
+        if (!hasBeenHidden)
+        {
+            if (dialogueCoroutine != null)
+                StopCoroutine(dialogueCoroutine);
+            isDialoguePlaying = false;
+            HideDialogue();
+        }
+    }
+    
+    // Manually hide dialogue from other scripts
+    public void ForceHideDialogue()
+    {
+        HideDialoguePermanently();
+    }
+    
+    // Reset for replaying (optional)
+    public void ResetDialogue()
+    {
+        hasBeenHidden = false;
         isDialoguePlaying = false;
-        HideDialogue();
+        if (dialogueCoroutine != null)
+            StopCoroutine(dialogueCoroutine);
+        
+        if (dialogueUI != null)
+            dialogueUI.SetActive(false);
+        
+        StartDialogue();
     }
 }
