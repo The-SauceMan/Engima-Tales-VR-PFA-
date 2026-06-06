@@ -94,7 +94,7 @@ The application is built around a **branching, interactive narrative** where the
    ```bash
    git clone https://github.com/The-SauceMan/Engima-Tales-VR-PFA-.git ** Unity 2022.3+, Visual Studio 2022+, Git.
 2.**Open the project in Unity:**
--- Launch Unity Hub
--- Click "Open Project"
--- Select the cloned project folder
--- Ensure you are using Unity 2022.3.62f3
+--> Launch Unity Hub
+--> Click "Open Project"
+--> Select the cloned project folder
+--> Ensure you are using Unity 2022.3.62f3
