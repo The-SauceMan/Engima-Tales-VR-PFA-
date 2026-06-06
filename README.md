@@ -63,35 +63,7 @@ The application is built around a **branching, interactive narrative** where the
 - **Pattern:** Model-View-Controller (MVC) to separate data logic, UI/view, and user input for maintainability.
 - **Engine:** Unity 2022.3+ with **OpenXR** for cross-platform VR support.
 - **Language:** C# for all scripting and gameplay logic.
-
-### Development Tools
-| Tool | Purpose |
-|------|---------|
-| **Unity** | Core game engine, rendering, physics, scene management |
-| **Visual Studio** | C# scripting, debugging, IntelliSense |
-| **Blender** | 3D character modeling (Tortoise & Hare), UV mapping, optimization |
-| **Mixamo** | Automated character rigging and animations |
-| **Sketchfab** | Source for some low-poly environmental assets |
-| **GitHub** | Version control, source code management |
-| **Meta Quest 3s** | Primary standalone VR headset for testing and deployment |
-
-### Performance Optimization (for Standalone VR)
-- **Target Frame Rate:** Stable 90 FPS to prevent motion sickness.
-- **Character Poly Budget:** 5,000–30,000 triangles per character.
-  - Rabbit: ~30k triangles
-  - Turtle: ~35k triangles
-- **Low-Poly Art Style:** Reduces rendering load while remaining visually appealing for children.
-- **Efficient Scene Management:** Assets carefully arranged and optimized for the Meta Quest 3's mobile processor.
-
----
-
-## 🎨 Characters & Environment
-
-### Characters (Designed in Blender)
-| Character | Vertices | Triangles | Style |
-|-----------|----------|-----------|-------|
-| **Hare (Rabbit)** | 15,151 | 30,032 | Low-poly, energetic expression |
-| **Tortoise (Turtle)** | 17,976 | 35,264 | Low-poly, calm appearance |
+- **Unity's Built-in Timeline:** Used for cinematic storytelling, cutscenes, and character animations throughout the narrative sequences.
 
 ### Key Scenes
 1.  **Bedroom Scene:** Calm, blue-themed room with bed, desk, books, and window. Serves as the main menu environment.
@@ -110,6 +82,19 @@ The application is built around a **branching, interactive narrative** where the
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Hardware:** Meta Quest 3, Pico 4 Ultra, or any OpenXR-compatible headset.
-- **PC (for development):** Windows 10/11, NVIDIA GTX 1060 (or equivalent) minimum, 16+ GB RAM.
-- **Software:** Unity 2022.3+, Visual Studio 2022+, Git.
+
+- **Unity Version:** 2022.3.62f3 or later
+- **Version Control:** Git
+- **Hardware:** Meta Quest 3s/3/2, or any OpenXR-compatible headset
+- **PC:** Windows 10/11 for development
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/The-SauceMan/Engima-Tales-VR-PFA-.git ** Unity 2022.3+, Visual Studio 2022+, Git.
+2.**Open the project in Unity:**
+-- Launch Unity Hub
+-- Click "Open Project"
+-- Select the cloned project folder
+-- Ensure you are using Unity 2022.3.62f3
