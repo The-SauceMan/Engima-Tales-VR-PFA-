@@ -21,7 +21,7 @@ Instead of passively reading words on a page, children step *inside* the story w
 </p>
 
 ---
-
+<!--
 ## 📖 The Idea & Motivation
 
 Today, 81% of Tunisian children aged 5-17 spend significant time in front of screens, yet 36% lack basic reading skills. Traditional reading struggles to compete with video games and animated content.
@@ -29,7 +29,7 @@ Today, 81% of Tunisian children aged 5-17 spend significant time in front of scr
 **Our solution?** Don't fight technology—leverage it. We transform reading from a passive activity into an **active, embodied experience**. The child becomes a participant, not just a spectator. By combining the richness of classic storytelling (The Tortoise and the Hare) with the immersion of VR, we stimulate imagination, creativity, and cognitive skills while making learning genuinely fun.
 
 ---
-
+-->
 ## 🎮 Storytelling & Game Mechanics
 
 The application is built around a **branching, interactive narrative** where the child's actions matter.
