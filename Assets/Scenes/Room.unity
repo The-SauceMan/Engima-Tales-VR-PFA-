@@ -7997,8 +7997,11 @@ MonoBehaviour:
   radioAudioSource: {fileID: 1630855213}
   musicTracks:
   - {fileID: 8300000, guid: 389ad6349788bd14c8e5327794342be0, type: 3}
-  - {fileID: 8300000, guid: 538ad1146fc27ea43be394e65b988f53, type: 3}
+  - {fileID: 8300000, guid: 08b9195509c11d64a98b1766aabf7423, type: 3}
   - {fileID: 8300000, guid: 552608f63a25cf54a8b8b46747bb49bf, type: 3}
+  - {fileID: 8300000, guid: e7c16f78e05071645847d15604509bf2, type: 3}
+  - {fileID: 8300000, guid: 8e553a6e092a9424f915453ba297a49c, type: 3}
+  - {fileID: 8300000, guid: 8552113526738e3439a57c2241833792, type: 3}
   volumeSlider: {fileID: 920749429}
   defaultVolume: 0.7
   uiOffset: {x: 0, y: 0.2, z: 0}
